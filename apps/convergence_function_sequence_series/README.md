@@ -1,6 +1,6 @@
 # Analysis 1 Interactive Playground
 
-![App Screenshot](https://github.com/AlexsdeG/Analysis1_Visualizers/blob/main/apps/convergence_function_sequence_series/assets/Ana1_Konvergenz.png)
+![App Screenshot](https://github.com/AlexsdeG/Analysis1_Visualizers/blob/main/apps/convergence_function_sequence_series/Ana1_Konvergenz.png)
 
 A high-precision, interactive educational web application designed for university-level Calculus/Analysis 1 students. This tool visualizes abstract mathematical concepts using the "Explorable Explanation" philosophy, making definitions like $\epsilon-N$ and Uniform Convergence intuitive and tangible.
 
