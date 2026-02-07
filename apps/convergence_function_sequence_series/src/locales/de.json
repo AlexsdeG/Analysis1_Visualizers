@@ -1,0 +1,133 @@
+{
+  "app": {
+    "title": "Analysis 1 Interaktiv"
+  },
+  "common": {
+    "loading": "Lädt...",
+    "comingSoon": "Demnächst verfügbar",
+    "reset": "Zurücksetzen",
+    "calculate": "Berechnen",
+    "analysis": "Analyse",
+    "goal": "Ziel",
+    "calculation": "Berechnung",
+    "general_formula": "Allgemeine Formel",
+    "current_values": "Aktuelle Werte"
+  },
+  "modules": {
+    "sequences": {
+      "title": "Folgen",
+      "description": "Visualisierung von Grenzwerten und der Epsilon-N Definition.",
+      "controls": {
+        "formula_label": "Folgeglied (a_n)",
+        "limit_label": "Grenzwert (a)",
+        "epsilon_label": "Epsilon (ε)",
+        "n_label": "Schwellenwert (N)"
+      },
+      "status": {
+        "convergent": "Definition erfüllt",
+        "divergent": "Definition verletzt",
+        "invalid": "Ungültige Formel"
+      },
+      "legend": {
+        "tube": "Epsilon-Schlauch",
+        "barrier": "N-Schranke"
+      },
+      "info": {
+        "definition": "Die formale Definition des Grenzwerts einer Folge",
+        "explanation_1": "Passe",
+        "explanation_2": "an, um die Breite des Zielschlauchs zu ändern. Finde ein",
+        "explanation_3": "sodass alle Punkte rechts der vertikalen Linie im Schlauch liegen. Wenn du für jedes Epsilon ein solches N findest, konvergiert die Folge."
+      },
+      "analysis": {
+        "success_title": "Bedingung erfüllt",
+        "success_desc": "Für das gewählte N liegen alle Punkte n > N strikt innerhalb des Epsilon-Schlauchs. Die Konfiguration ist gültig.",
+        "failure_title": "Bedingung verletzt",
+        "failure_desc": "Die Definition verlangt, dass ALLE Punkte nach N im Schlauch liegen.",
+        "violation_detail": "Aber bei n={{n}} liegt der Wert {{val}} außerhalb des Schlauchs ({{min}} bis {{max}})."
+      },
+      "calc": {
+        "check": "Prüfung an einem Punkt",
+        "distance": "Abstand"
+      }
+    },
+    "series": {
+      "title": "Reihen",
+      "description": "Verständnis von Konvergenzradius und Potenzreihen.",
+      "controls": {
+        "formula_label": "Koeffizient (a_n)",
+        "input_hint": "Definiere a_n (z.B. 1/n, 2^n, 1/n!)",
+        "radius_result": "Konvergenzradius (R)",
+        "z_label": "Testpunkt (z)"
+      },
+      "status": {
+        "convergent": "Konvergent (|z| < R)",
+        "divergent": "Divergent (|z| > R)",
+        "boundary": "Randbereich (Manuell prüfen)"
+      },
+      "legend": {
+        "region": "Konvergenzbereich",
+        "point": "Testpunkt z"
+      },
+      "info": {
+        "definition_1": "Eine Potenzreihe",
+        "definition_2": "konvergiert absolut, wenn",
+        "definition_3": "wobei R der Konvergenzradius ist.",
+        "legend_desc": "Punkte innerhalb des Kreises (Grün) konvergieren. Punkte außerhalb (Rot) divergieren. Das Verhalten auf dem Rand muss individuell geprüft werden.",
+        "note": "Hinweis: Radius wird numerisch mit n=10000 geschätzt.",
+        "ratio_test": "Das Quotientenkriterium bestimmt den Radius R durch Analyse des Verhältnisses aufeinanderfolgender Koeffizienten."
+      },
+      "examples": {
+        "harmonic": "Harmonische Koeffizienten (1/n). Das Verhältnis |(1/n)/(1/(n+1))| strebt gegen 1. Daher ist R = 1.",
+        "geometric": "Geometrische Reihe (2^n). Das Verhältnis |2^n / 2^(n+1)| ist 1/2. Der Radius ist R = 0.5.",
+        "factorial": "Fakultät im Nenner (1/n!) wächst extrem schnell. Die Koeffizienten gehen sehr schnell gegen 0. Der Radius ist Unendlich.",
+        "standard": "Der Radius R wird mit dem Quotientenkriterium berechnet: R = lim |a_n / a_{n+1}|."
+      },
+      "calc": {
+        "ratio_approx": "Näherung via Quotientenkriterium"
+      }
+    },
+    "functions": {
+      "title": "Funktionenfolgen",
+      "description": "Visualisierung von punktweiser vs. gleichmäßiger Konvergenz.",
+      "controls": {
+        "title": "Konfiguration",
+        "formula_label": "Folgeglied f_n(x)",
+        "limit_label": "Ziel-Grenzfunktion f(x)",
+        "n_label": "Index (n)",
+        "presets": "Beispiel laden"
+      },
+      "info": {
+        "analyze": "Analysiere die Konvergenz von Funktionenfolgen",
+        "pointwise_title": "Punktweise Konvergenz",
+        "pointwise_desc": "Für jedes feste x konvergiert die Zahlenfolge.",
+        "uniform_title": "Gleichmäßige Konvergenz",
+        "uniform_desc": "Der \"maximale Abstand\" zwischen der Funktion und dem Grenzwert geht gegen Null.",
+        "hint": "Versuche: <code>x^n</code> auf [0,1]. Grenzwert ist 0 für x<1, aber 1 für x=1. <br/> Gleichmäßig? Nein, der \"Buckel\" bleibt auf Höhe 1."
+      },
+      "guide": {
+        "title": "So funktioniert dieses Modul",
+        "step1": "1. Beobachte die blaue Kurve f_n(x), wenn du n erhöhst.",
+        "step2": "2. Berechne den Grenzwert f(x) für n -> unendlich auf Papier.",
+        "step3": "3. Trage dein Ergebnis in 'Ziel-Grenzfunktion' ein.",
+        "step4": "4. Prüfe auf Gleichmäßige Konvergenz: Legt sich die Blaue Linie KOMPLETT auf die Graue?",
+        "check_yes": "JA -> Gleichmäßig Konvergent.",
+        "check_no": "NEIN (z.B. \"Buckel\" bleibt) -> Nur Punktweise Konvergent."
+      },
+      "presets": {
+        "xn": "Beispiel: x^n",
+        "xn_desc": "Konvergiert punktweise gegen 0 (für x<1) und 1 (für x=1). NICHT gleichmäßig, da der maximale Abstand immer 1 bleibt.",
+        "inv": "Beispiel: x/n",
+        "inv_desc": "Die Linie wird immer flacher. Konvergiert gleichmäßig gegen 0."
+      },
+      "analysis": {
+        "supremum": "Maximaler Abstand (Supremum)",
+        "sup_explanation": "Dies ist die größte vertikale Lücke zwischen Blau und Grau im Bereich [0,1].",
+        "uniform_conclusion": "Die Distanz ist sehr klein. Das sieht nach gleichmäßiger Konvergenz aus.",
+        "pointwise_conclusion": "Die Distanz ist signifikant (> 0.1). Die Konvergenz ist wahrscheinlich NICHT gleichmäßig."
+      },
+      "calc": {
+        "sup_dist": "Supremum Abstand"
+      }
+    }
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "app": {
+    "title": "Analysis 1 Interactive"
+  },
+  "common": {
+    "loading": "Loading...",
+    "comingSoon": "Coming Soon",
+    "reset": "Reset",
+    "calculate": "Calculate",
+    "analysis": "Analysis",
+    "goal": "Goal",
+    "calculation": "Calculation",
+    "general_formula": "General Formula",
+    "current_values": "Current Values"
+  },
+  "modules": {
+    "sequences": {
+      "title": "Sequences",
+      "description": "Visualizing limits and the Epsilon-N definition.",
+      "controls": {
+        "formula_label": "Sequence Term (a_n)",
+        "limit_label": "Limit Guess (a)",
+        "epsilon_label": "Epsilon (ε)",
+        "n_label": "Threshold (N)"
+      },
+      "status": {
+        "convergent": "Definition Holds",
+        "divergent": "Definition Fails",
+        "invalid": "Invalid Formula"
+      },
+      "legend": {
+        "tube": "Epsilon Tube",
+        "barrier": "N Barrier"
+      },
+      "info": {
+        "definition": "The formal definition of the limit of a sequence",
+        "explanation_1": "Adjust",
+        "explanation_2": "to change the width of the target tube. Find an",
+        "explanation_3": "such that all points to the right of the vertical line are inside the tube. If you can always find such an N for any epsilon, the sequence converges."
+      },
+      "analysis": {
+        "success_title": "Condition Satisfied",
+        "success_desc": "For the current N, all points n > N lie strictly inside the Epsilon tube. This configuration is valid.",
+        "failure_title": "Condition Violated",
+        "failure_desc": "The definition requires ALL points after N to be inside the tube.",
+        "violation_detail": "However, at n={{n}}, the value {{val}} is outside the tube ({{min}} to {{max}})."
+      },
+      "calc": {
+        "check": "Check condition at a specific point",
+        "distance": "Distance"
+      }
+    },
+    "series": {
+      "title": "Series",
+      "description": "Understanding convergence radius and power series.",
+      "controls": {
+        "formula_label": "Series Coefficient (a_n)",
+        "input_hint": "Define a_n (e.g. 1/n, 2^n, 1/n!)",
+        "radius_result": "Radius (R)",
+        "z_label": "Test Point (z)"
+      },
+      "status": {
+        "convergent": "Convergent (|z| < R)",
+        "divergent": "Divergent (|z| > R)",
+        "boundary": "Boundary (Check manually)"
+      },
+      "legend": {
+        "region": "Convergence Region",
+        "point": "Test Point z"
+      },
+      "info": {
+        "definition_1": "A power series",
+        "definition_2": "converges absolutely if",
+        "definition_3": "where R is the radius of convergence.",
+        "legend_desc": "Points inside the circle (Green) converge. Points outside (Red) diverge. The behavior on the boundary must be checked individually.",
+        "note": "Note: Radius is estimated numerically using n=10000.",
+        "ratio_test": "The Ratio Test determines the radius of convergence R by analyzing the ratio of consecutive coefficients."
+      },
+      "examples": {
+        "harmonic": "Harmonic-like coefficients. The ratio |(1/n)/(1/(n+1))| approaches 1. Thus R = 1.",
+        "geometric": "Geometric series coefficients. The ratio |2^n / 2^(n+1)| is 1/2. The radius is the reciprocal: R = 2. Wait, actually R = 1/limsup |a_n|^(1/n). For 2^n, radius is 0.5.",
+        "factorial": "Factorial grows very fast. The coefficients get small very quickly (1/n!). The Radius is Infinity.",
+        "standard": "Radius R is calculated using the Ratio Test: R = lim |a_n / a_{n+1}|."
+      },
+      "calc": {
+        "ratio_approx": "Approximation via Ratio Test"
+      }
+    },
+    "functions": {
+      "title": "Function Sequences",
+      "description": "Visualizing pointwise vs. uniform convergence.",
+      "controls": {
+        "title": "Configuration",
+        "formula_label": "Sequence Term f_n(x)",
+        "limit_label": "Target Limit Function f(x)",
+        "n_label": "Index (n)",
+        "presets": "Load Example"
+      },
+      "info": {
+        "analyze": "Analyze the convergence of function sequences",
+        "pointwise_title": "Pointwise Convergence",
+        "pointwise_desc": "For every fixed x, the sequence of numbers converges.",
+        "uniform_title": "Uniform Convergence",
+        "uniform_desc": "The \"maximum distance\" between the function and the limit goes to zero.",
+        "hint": "Try: <code>x^n</code> on [0,1]. Limit is 0 for x<1, but 1 for x=1. <br/> Is it uniform? No, the \"bump\" stays at height 1."
+      },
+      "guide": {
+        "title": "How to use this module",
+        "step1": "1. Observe the blue curve f_n(x) as you increase n.",
+        "step2": "2. Calculate the limit f(x) for n -> infinity on paper.",
+        "step3": "3. Enter your result in 'Target Limit Function' (Gray dashed line).",
+        "step4": "4. Check for Uniform Convergence: Does the Blue line flatten COMPLETELY onto the Gray line?",
+        "check_yes": "YES -> Uniform Convergence.",
+        "check_no": "NO (e.g. \"bump\" remains) -> Pointwise Convergence only."
+      },
+      "presets": {
+        "xn": "Example: x^n",
+        "xn_desc": "Converges pointwise to 0 (for x<1) and 1 (for x=1). NOT uniform, because the max distance stays 1.",
+        "inv": "Example: x/n",
+        "inv_desc": "The line gets flatter and flatter. Converges uniformly to 0."
+      },
+      "analysis": {
+        "supremum": "Max Distance (Supremum)",
+        "sup_explanation": "This is the largest vertical gap between Blue and Gray in [0,1].",
+        "uniform_conclusion": "The distance is very small. This looks like uniform convergence.",
+        "pointwise_conclusion": "The distance is significant (> 0.1). This is likely NOT uniform."
+      },
+      "calc": {
+        "sup_dist": "Supremum Distance"
+      }
+    }
+  }
+}
